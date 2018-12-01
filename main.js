@@ -103,7 +103,7 @@ function drawHouseRoof() {
 function drawHouseChimney() {
     context.beginPath();
     context.fillStyle = 'red';
-    context.fillRect(450, height - 325, 50, 100);
+    context.fillRect(width/2 - 200, height - 325, 50, 100);
     context.stroke();
 }
 
