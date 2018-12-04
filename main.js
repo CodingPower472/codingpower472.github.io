@@ -8,7 +8,7 @@ const canvas = document.getElementById('canvas');
 const width = window.innerWidth;
 const height = window.innerHeight;
 
-console.log(`Starting with width ${width} and height ${height}`)
+//console.log(`Starting with width ${width} and height ${height}`)
 
 canvas.width = width;
 canvas.height = height;
@@ -16,6 +16,7 @@ canvas.height = height;
 const context = canvas.getContext('2d');
 
 const snowDrops = [];
+let snowAccum = 0;
 
 function genSnowDrop() {
     const size = parseInt(Math.random() * 3 + 4); // radius of snow drop
@@ -51,14 +52,14 @@ function drawE(e) {
 
 function regenSnowDrop() {
     const snowDrop = genSnowDrop();
-    console.log('Regenerating snow drop:');
-    console.log(snowDrop);
+    //console.log('Regenerating snow drop:');
+    //console.log(snowDrop);
     snowDrop.y = 0;
     return snowDrop;
 }
 
 function drawSnowDrop(snowDrop) {
-    console.log('Drawing snow drop');
+    //console.log('Drawing snow drop');
     context.beginPath();
     context.arc(snowDrop.x, snowDrop.y, snowDrop.size, 0, 2 * Math.PI, false);
     context.fillStyle = '#00B9FF';
@@ -80,6 +81,13 @@ function drawWelcomeText() {
     context.fillStyle = '#00FF5F';
     context.font = '50px Arial';
     context.fillText('Yo Christmas is pretty lit', width/2 - 300, height/2 - 50);
+    context.stroke();
+}
+
+function drawSnowAccum() {
+    context.beginPath();
+    context.fillStyle = '#00B9FF';
+    context.fillRect(0, height - snowAccum, width, snowAccum);
     context.stroke();
 }
 
@@ -113,13 +121,13 @@ function start() {
         snowDrops.push(snowDrop);
         drawSnowDrop(snowDrop);
     }
-    console.log(snowDrops);
+    //console.log(snowDrops);
     const Es = [];
     let markDrawn = false;
     let markX = 0;
     let markY = 0;
     setTimeout(() => {
-        console.log('Drawing Mark');
+        //console.log('Drawing Mark');
         markDrawn = true;
         drawMark(Math.random() * width, 0);
         markX = Math.random() * width;
@@ -131,20 +139,23 @@ function start() {
         drawHouseMain();
         drawHouseRoof();
         drawHouseChimney();
+        drawSnowAccum();
         if (markDrawn) {
             markY += 1;
             drawMark(markX, markY);
         }
         for (let i = 0; i < snowDrops.length; i++) {
-            console.log(i);
+            ////console.log(i);
             const snowDrop = snowDrops[i];
             snowDrop.y += height / (period * fps) / snowDrop.size;
             snowDrop.x += wind / (snowDrop.size * fps);
             if (snowDrop.y - snowDrop.size / 2 > height) {
-                console.log('Fell');
+                //console.log('Fell');
+                snowAccum += snowDrop.size / width * 10;
+                //console.log('Snow accum: ' + snowAccum);
                 snowDrops.splice(i, 1);
                 snowDrops.push(regenSnowDrop());
-                console.log('Regenerated snow drop');
+                //console.log('Regenerated snow drop');
                 i--;
             }
             drawSnowDrop(snowDrop);
