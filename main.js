@@ -86,7 +86,7 @@ function drawWelcomeText() {
 
 function drawSnowAccum() {
     context.beginPath();
-    context.fillStyle = '#00B9FF';
+    context.fillStyle = '#00F2FF';
     context.fillRect(0, height - snowAccum, width, snowAccum);
     context.stroke();
 }
