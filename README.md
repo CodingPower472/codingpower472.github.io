@@ -6,17 +6,11 @@
 
 ## Overview
 
-Concisely explain what the program does. If this exceeds a couple of
-sentences, you're going too far. Generally you should be pulling this
-right from the project specification. I don't want you to just cut and
-paste, but paraphrase what is stated in the project specification.
+This program draws a Christmas scene, with snow drops, a house with a roof and chimney, B emoji's and one Markiplier falling from the screen.
 
 ## Compiling and Using
 
-This section should tell the user how to compile your code.  It is
-also appropriate to instruct the user how to use your code. Does your
-program require user input? If so, what does your user need to know
-about it to use it as quickly as possible?
+Simply run index.html in a web browser, and examine the results!
 
 ## Discussion
 
@@ -34,27 +28,18 @@ thinking.
   * Is there anything that you would change about the project?
   * Can you apply what you learned in this project to future projects?
 
+The main problems I had were issues with elements not drawing in the correct region on the screen due to confusing definitions of where the elements were drawn on the screen.  However, my system of frames with a fixed frame rate worked very well.  I didn't have any major moments where everything "clicked" but I had some moments where I felt like I understood programming better.  To create the program, I used StackOverflow and Google and adapted the situations to my specific program.  To research on my own, I had to search on Google, StackOverflow, and W3Schools.  I probably would have planned out what I was going to add before I added it if I went back.  I learned a lot about Canvas elements and making images and shapes be drawn onto the screen in JavaScript.  I got some errors where some elements weren't drawing, but I fixed them by debugging the specific positions of each of them and discovered they were drawing off the screen.  I found it challenging to make my brain work to draw from the top of the screen as 0 instead of the bottom being 0.  This was overall a very fun project and tested my understanding.
+
 ## Testing
 
-In this section, tell us how you tested your project.
-
-You are expected to test your projects before submitting them for
-final review. Pretend that your instructor is your manager or 
-customer at work. How would you ensure that you are delivering a 
-working solution to their requirements?
+I opened the project in a web browser and ensured it followed all of the instructions.
 
 ## Extra Credit
 
-If the project had opportunities for extra credit that you attempted,
-be sure to call it out so the grader does not overlook it.
+Snow accumulation?
 
 ## Sources used
 
-If you used any sources outside of the lecture notes, class lab files,
-or text book you need to list them here. If you looked something up on
-stackoverflow.com and fail to cite it in this section it will be
-considered plagiarism and be dealt with accordingly. So be safe CITE!
-[Here is some help creating links](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
-
-----------
-This README template is using Markdown. To preview your README output, you can copy your file contents to a Markdown editor/previewer such as [https://stackedit.io/editor](https://stackedit.io/editor).
+https://www.w3schools.com/html/html5_canvas.asp
+https://www.w3schools.com/graphics/canvas_images.asp
+https://stackoverflow.com/questions/6011378/how-to-add-image-to-canvas
