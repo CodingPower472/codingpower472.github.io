@@ -123,6 +123,13 @@ function drawHouseChimney() {
     context.stroke();
 }
 
+function drawYouHadToDoItToEm(x, y) {
+    const image = document.getElementById('HadToDoItToEm');
+    context.beginPath();
+    context.drawImage(image, x, y, 50, 50);
+    context.stroke();
+}
+
 // start program
 function start() {
     // draw 50 snow drops and add them to the list of snow drops
@@ -144,6 +151,9 @@ function start() {
         markX = Math.random() * width;
         markY = 0;
     }, Math.random() * 5000 + 2000);
+    // generate coordinates for "you know i had to do it to em" guy
+    let hadToDoItToEmX = Math.random() * (width - 50);
+    let hadToDoItToEmY = Math.random() * (height - 50);
     // repeat frames quickly at given fps
     setInterval(() => {
         context.clearRect(0, 0, width, height); // clear screen for redrawing
@@ -152,6 +162,8 @@ function start() {
         drawHouseRoof();
         drawHouseChimney();
         drawSnowAccum();
+        // draw "you know i had to do it to em" guy
+        drawYouHadToDoItToEm(hadToDoItToEmX, hadToDoItToEmY);
         // if Markiplier already drawn, update position
         if (markDrawn) {
             markY += 1;
