@@ -1,4 +1,7 @@
 
+// This is the JavaScript code that helps display the snow scene
+// By Luke Bousfield
+
 const fps = 60; // frames per second of animation
 const period = 2; // time it takes for snowdrops to fall from the top of the screen
 const wind = 50; // left negative, pixels per secons
